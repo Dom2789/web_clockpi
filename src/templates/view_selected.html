@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Selected Content from {{ text_file.name }}</h2>
+            <div>
+                <a href="{% url 'view_file' text_file.id %}" class="btn btn-secondary">Edit Selection</a>
+                <a href="{% url 'file_list' %}" class="btn btn-outline-secondary">Back to Files</a>
+            </div>
+        </div>
+        
+        {% if selected_contents %}
+            <div class="card">
+                <div class="card-header">
+                    <h5>Database Content ({{ selected_contents.count }} lines saved)</h5>
+                </div>
+                <div class="card-body">
+                    {% for content in selected_contents %}
+                        <div class="border-bottom pb-2 mb-2">
+                            <small class="text-muted">Line {{ content.line_number }}:</small>
+                            <p class="mb-1">{{ content.content }}</p>
+                            <small class="text-muted">Saved: {{ content.selected_at|date:"M d, Y H:i" }}</small>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                <h5>No content selected</h5>
+                <p>No lines have been selected from this file yet.</p>
+                <a href="{% url 'view_file' text_file.id %}" class="btn btn-primary">Select Content</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
