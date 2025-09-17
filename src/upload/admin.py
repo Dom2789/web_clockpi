@@ -3,9 +3,10 @@ from .models import TextFile, SelectedContent
 
 @admin.register(TextFile)
 class TextFileAdmin(admin.ModelAdmin):
-    list_display = ['name', 'uploaded_at']
-    list_filter = ['uploaded_at']
-    search_fields = ['name']
+    list_display = ['name', 'file_path', 'processed_at']
+    list_filter = ['processed_at']
+    search_fields = ['name', 'file_path']
+    readonly_fields = ['processed_at']
 
 @admin.register(SelectedContent)
 class SelectedContentAdmin(admin.ModelAdmin):

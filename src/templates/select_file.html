@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>Select Text File from Server</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="{{ form.selected_file.id_for_label }}" class="form-label">Available Text Files</label>
+                        {{ form.selected_file }}
+                        <div class="form-text">Select a file from the server directory to process</div>
+                        {% if form.selected_file.errors %}
+                            <div class="text-danger">
+                                {% for error in form.selected_file.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Process Selected File</button>
+                        <a href="{% url 'refresh_files' %}" class="btn btn-outline-secondary">Browse All Files in Directory</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

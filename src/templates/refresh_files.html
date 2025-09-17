@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Files in Directory</h2>
+            <div>
+                <a href="{% url 'select_file' %}" class="btn btn-primary">Select File to Process</a>
+                <a href="{% url 'file_list' %}" class="btn btn-outline-secondary">View Processed Files</a>
+            </div>
+        </div>
+        
+        <div class="alert alert-info">
+            <strong>Directory:</strong> {{ directory }}
+        </div>
+        
+        {% if available_files %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>File Size</th>
+                            <th>Last Modified</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for file in available_files %}
+                        <tr>
+                            <td>{{ file.name }}</td>
+                            <td>{{ file.size|filesizeformat }}</td>
+                            <td>{{ file.modified|date:"M d, Y H:i" }}</td>
+                            <td>
+                                <form method="post" action="{% url 'select_file' %}" style="display: inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="selected_file" value="{{ file.path }}">
+                                    <button type="submit" class="btn btn-sm btn-primary">Process This File</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                <h5>No text files found</h5>
+                <p>No .txt files were found in the directory: <strong>{{ directory }}</strong></p>
+                <p>Please ensure:</p>
+                <ul>
+                    <li>The directory exists and is accessible</li>
+                    <li>There are .txt files in the directory</li>
+                    <li>The web server has read permissions for the directory</li>
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

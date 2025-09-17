@@ -1,14 +1,35 @@
 from django import forms
 from .models import TextFile
+import os
+from django.conf import settings
 
-class TextFileUploadForm(forms.ModelForm):
-    class Meta:
-        model = TextFile
-        fields = ['name', 'file']
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter file name'}),
-            'file': forms.FileInput(attrs={'class': 'form-control', 'accept': '.txt'})
-        }
+class FileSelectionForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+        # Get the directory path from settings
+        text_files_dir = getattr(settings, 'TEXT_FILES_DIRECTORY', 'text_files')
+        
+        # Get list of .txt files from the directory
+        file_choices = []
+        try:
+            if os.path.exists(text_files_dir):
+                for filename in os.listdir(text_files_dir):
+                    if filename.lower().endswith('.txt'):
+                        file_path = os.path.join(text_files_dir, filename)
+                        file_choices.append((file_path, filename))
+            file_choices.sort(key=lambda x: x[1])  # Sort by filename
+        except Exception as e:
+            pass  # Handle directory access errors gracefully
+            
+        if not file_choices:
+            file_choices = [('', 'No text files found in directory')]
+            
+        self.fields['selected_file'] = forms.ChoiceField(
+            choices=file_choices,
+            widget=forms.Select(attrs={'class': 'form-control'}),
+            label='Select Text File'
+        )
 
 class ContentSelectionForm(forms.Form):
     def __init__(self, *args, **kwargs):

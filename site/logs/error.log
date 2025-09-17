@@ -1,0 +1,67 @@
+[Tue Sep 16 11:12:26.901579 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:12:26.901731 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133] Traceback (most recent call last):
+[Tue Sep 16 11:12:26.901749 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:12:26.901763 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]     response = get_response(request)
+[Tue Sep 16 11:12:26.901777 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:12:26.901791 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]     response = self.process_request(request)
+[Tue Sep 16 11:12:26.901806 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:12:26.901820 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]     host = request.get_host()
+[Tue Sep 16 11:12:26.901834 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:12:26.901848 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133]     raise DisallowedHost(msg)
+[Tue Sep 16 11:12:26.901862 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51133] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:13:21.814120 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:13:21.814225 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134] Traceback (most recent call last):
+[Tue Sep 16 11:13:21.814243 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:13:21.814259 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]     response = get_response(request)
+[Tue Sep 16 11:13:21.814273 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:13:21.814288 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]     response = self.process_request(request)
+[Tue Sep 16 11:13:21.814302 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:13:21.814317 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]     host = request.get_host()
+[Tue Sep 16 11:13:21.814331 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:13:21.814345 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134]     raise DisallowedHost(msg)
+[Tue Sep 16 11:13:21.814359 2025] [wsgi:error] [pid 2592:tid 2657] [remote 192.168.178.123:51134] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:13:23.192673 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:13:23.192811 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135] Traceback (most recent call last):
+[Tue Sep 16 11:13:23.192829 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:13:23.192843 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]     response = get_response(request)
+[Tue Sep 16 11:13:23.192857 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:13:23.192872 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]     response = self.process_request(request)
+[Tue Sep 16 11:13:23.192885 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:13:23.192900 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]     host = request.get_host()
+[Tue Sep 16 11:13:23.192913 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:13:23.192927 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135]     raise DisallowedHost(msg)
+[Tue Sep 16 11:13:23.192941 2025] [wsgi:error] [pid 2592:tid 2638] [remote 192.168.178.123:51135] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:17:35.307966 2025] [wsgi:error] [pid 2682:tid 2723] [remote 192.168.178.122:52595] Not Found: /favicon.ico
+[Tue Sep 16 11:22:04.678285 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:22:04.678399 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596] Traceback (most recent call last):
+[Tue Sep 16 11:22:04.678416 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:22:04.678431 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]     response = get_response(request)
+[Tue Sep 16 11:22:04.678446 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:22:04.678461 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]     response = self.process_request(request)
+[Tue Sep 16 11:22:04.678476 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:22:04.678490 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]     host = request.get_host()
+[Tue Sep 16 11:22:04.678505 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:22:04.678519 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596]     raise DisallowedHost(msg)
+[Tue Sep 16 11:22:04.678534 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.122:52596] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:22:28.226330 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:22:28.226441 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138] Traceback (most recent call last):
+[Tue Sep 16 11:22:28.226494 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:22:28.226510 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]     response = get_response(request)
+[Tue Sep 16 11:22:28.226524 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:22:28.226539 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]     response = self.process_request(request)
+[Tue Sep 16 11:22:28.226554 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:22:28.226569 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]     host = request.get_host()
+[Tue Sep 16 11:22:28.226583 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:22:28.226598 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138]     raise DisallowedHost(msg)
+[Tue Sep 16 11:22:28.226612 2025] [wsgi:error] [pid 2832:tid 2868] [remote 192.168.178.123:51138] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:24:39.845095 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140] Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Tue Sep 16 11:24:39.845200 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140] Traceback (most recent call last):
+[Tue Sep 16 11:24:39.845217 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Tue Sep 16 11:24:39.845232 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]     response = get_response(request)
+[Tue Sep 16 11:24:39.845246 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/utils/deprecation.py", line 133, in __call__
+[Tue Sep 16 11:24:39.845261 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]     response = self.process_request(request)
+[Tue Sep 16 11:24:39.845275 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/middleware/common.py", line 48, in process_request
+[Tue Sep 16 11:24:39.845290 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]     host = request.get_host()
+[Tue Sep 16 11:24:39.845304 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
+[Tue Sep 16 11:24:39.845319 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]     raise DisallowedHost(msg)
+[Tue Sep 16 11:24:39.845333 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.

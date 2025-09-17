@@ -4,8 +4,8 @@
 <div class="row">
     <div class="col-12">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Uploaded Files</h2>
-            <a href="{% url 'upload_file' %}" class="btn btn-primary">Upload New File</a>
+            <h2>Processed Files</h2>
+            <a href="{% url 'select_file' %}" class="btn btn-primary">Select New File</a>
         </div>
         
         {% if files %}
@@ -14,7 +14,8 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Uploaded</th>
+                            <th>File Path</th>
+                            <th>Processed</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -22,7 +23,8 @@
                         {% for file in files %}
                         <tr>
                             <td>{{ file.name }}</td>
-                            <td>{{ file.uploaded_at|date:"M d, Y H:i" }}</td>
+                            <td><small class="text-muted">{{ file.file_path }}</small></td>
+                            <td>{{ file.processed_at|date:"M d, Y H:i" }}</td>
                             <td>
                                 <a href="{% url 'view_file' file.id %}" class="btn btn-sm btn-outline-primary">View & Select</a>
                                 <a href="{% url 'view_selected' file.id %}" class="btn btn-sm btn-outline-success">View Selected</a>
@@ -34,9 +36,9 @@
             </div>
         {% else %}
             <div class="alert alert-info">
-                <h5>No files uploaded yet</h5>
-                <p>Upload your first text file to get started.</p>
-                <a href="{% url 'upload_file' %}" class="btn btn-primary">Upload File</a>
+                <h5>No files processed yet</h5>
+                <p>Select your first text file from the server directory to get started.</p>
+                <a href="{% url 'select_file' %}" class="btn btn-primary">Select File</a>
             </div>
         {% endif %}
     </div>

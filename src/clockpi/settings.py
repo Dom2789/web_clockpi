@@ -121,6 +121,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+# Text files directory (IMPORTANT: Configure this path)
+# This should be the absolute path to your directory containing text files
+TEXT_FILES_DIRECTORY = '/Users/dom/temp'  # Change this to your actual path
+# Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
+# Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
+# Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project
+
 # File upload settings
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024   # 10MB

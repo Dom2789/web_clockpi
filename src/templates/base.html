@@ -11,8 +11,9 @@
         <div class="container">
             <a class="navbar-brand" href="{% url 'file_list' %}">Text File Manager</a>
             <div class="navbar-nav">
-                <a class="nav-link" href="{% url 'file_list' %}">Files</a>
-                <a class="nav-link" href="{% url 'upload_file' %}">Upload</a>
+                <a class="nav-link" href="{% url 'file_list' %}">Processed Files</a>
+                <a class="nav-link" href="{% url 'select_file' %}">Select File</a>
+                <a class="nav-link" href="{% url 'refresh_files' %}">Browse Directory</a>
             </div>
         </div>
     </nav>
