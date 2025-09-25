@@ -13,30 +13,82 @@
         
         <div class="card">
             <div class="card-header">
-                <h5>Select content to store in database</h5>
-                <p class="mb-0 text-muted">Check the lines you want to save to the database</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Select content to store in database</h5>
+                        <p class="mb-0 text-muted">
+                            Showing lines {{ page_obj.start_index }}-{{ page_obj.end_index }} of {{ total_lines }} total lines
+                        </p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-success" onclick="selectAllFile()">Select All File</button>
+                        <button type="button" class="btn btn-sm btn-warning" onclick="clearAllSelections()">Clear All</button>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <form method="post">
                     {% csrf_token %}
+                    
                     <div class="mb-3">
-                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="selectAll()">Select All</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="deselectAll()">Deselect All</button>
+                        <button type="button" class="btn btn-sm btn-outline-primary" onclick="selectPage()">Select All on Page</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="deselectPage()">Deselect All on Page</button>
                     </div>
                     
                     <div style="max-height: 600px; overflow-y: auto; border: 1px solid #dee2e6; padding: 15px;">
                         {% for field in form %}
+                            {% with line_num=forloop.counter0|add:start_line|add:1 %}
                             <div class="form-check mb-2">
-                                {{ field }}
+                                {% if line_num in selected_lines %}
+                                    <input type="checkbox" class="form-check-input" name="{{ field.html_name }}" id="{{ field.id_for_label }}" checked>
+                                {% else %}
+                                    {{ field }}
+                                {% endif %}
                                 <label class="form-check-label" for="{{ field.id_for_label }}">
                                     {{ field.label }}
                                 </label>
                             </div>
+                            {% endwith %}
                         {% endfor %}
                     </div>
                     
-                    <div class="mt-3">
-                        <button type="submit" class="btn btn-primary">Save Selected Content</button>
+                    <!-- Pagination -->
+                    {% if page_obj.has_other_pages %}
+                    <nav aria-label="File pagination" class="mt-3">
+                        <ul class="pagination justify-content-center">
+                            {% if page_obj.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1">First</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                                </li>
+                            {% endif %}
+                            
+                            <li class="page-item active">
+                                <span class="page-link">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                                </span>
+                            </li>
+                            
+                            {% if page_obj.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% endif %}
+                    
+                    <div class="mt-3 d-flex gap-2">
+                        <button type="submit" name="save_current" class="btn btn-primary">Save Current Page</button>
+                        {% if page_obj.has_next %}
+                            <button type="submit" name="save_and_next" class="btn btn-success">Save & Next Page</button>
+                        {% endif %}
+                        <button type="submit" name="save_and_finish" class="btn btn-info">Save & Finish</button>
                     </div>
                 </form>
             </div>
@@ -45,14 +97,64 @@
 </div>
 
 <script>
-function selectAll() {
+function selectPage() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = true);
 }
 
-function deselectAll() {
+function deselectPage() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
+}
+
+function selectAllFile() {
+    if (confirm('This will select ALL lines in the entire file. Are you sure?')) {
+        fetch('{% url "select_all_lines" text_file.id %}', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                location.reload();
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred');
+        });
+    }
+}
+
+function clearAllSelections() {
+    if (confirm('This will clear ALL selections for this file. Are you sure?')) {
+        fetch('{% url "clear_all_selections" text_file.id %}', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                location.reload();
+            } else {
+                alert('Error: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred');
+        });
+    }
 }
 </script>
 {% endblock %}

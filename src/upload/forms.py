@@ -1,3 +1,4 @@
+# forms.py
 from django import forms
 from .models import TextFile
 import os
@@ -34,11 +35,13 @@ class FileSelectionForm(forms.Form):
 class ContentSelectionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         file_lines = kwargs.pop('file_lines', [])
+        start_line = kwargs.pop('start_line', 0)
         super().__init__(*args, **kwargs)
         
         for i, line in enumerate(file_lines):
-            self.fields[f'line_{i}'] = forms.BooleanField(
+            actual_line_number = start_line + i + 1
+            self.fields[f'line_{start_line + i}'] = forms.BooleanField(
                 required=False,
-                label=f"Line {i+1}: {line[:100]}{'...' if len(line) > 100 else ''}",
+                label=f"Line {actual_line_number}: {line[:100]}{'...' if len(line) > 100 else ''}",
                 widget=forms.CheckboxInput(attrs={'class': 'form-check-input'})
             )
