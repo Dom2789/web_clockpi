@@ -23,14 +23,13 @@ def select_file(request):
                     file_path=selected_file_path,
                     defaults={'name': filename}
                 )
-                
                 return redirect('view_file', file_id=text_file.id)
             else:
                 messages.error(request, "Selected file not found or inaccessible.")
     else:
         form = FileSelectionForm()
     
-    return render(request, 'select_file.html', {'form': form})
+    return render(request, 'upload/select_file.html', {'form': form})
 
 def view_file(request, file_id):
     text_file = get_object_or_404(TextFile, id=file_id)
@@ -112,7 +111,7 @@ def view_file(request, file_id):
         ).values_list('line_number', flat=True)
     )
     
-    return render(request, 'view_file.html', {
+    return render(request, 'upload/view_file.html', {
         'text_file': text_file,
         'form': form,
         'page_obj': page_obj,
@@ -126,14 +125,14 @@ def view_selected(request, file_id):
     text_file = get_object_or_404(TextFile, id=file_id)
     selected_contents = SelectedContent.objects.filter(text_file=text_file).order_by('line_number')
     
-    return render(request, 'view_selected.html', {
+    return render(request, 'upload/view_selected.html', {
         'text_file': text_file,
         'selected_contents': selected_contents
     })
 
 def file_list(request):
     files = TextFile.objects.all().order_by('-processed_at')
-    return render(request, 'file_list.html', {'files': files})
+    return render(request, 'upload/file_list.html', {'files': files})
 
 def refresh_files(request):
     """View to scan directory and show available files without processing"""
@@ -156,7 +155,7 @@ def refresh_files(request):
     except Exception as e:
         messages.error(request, f"Error accessing directory: {str(e)}")
     
-    return render(request, 'refresh_files.html', {
+    return render(request, 'upload/refresh_files.html', {
         'available_files': available_files,
         'directory': text_files_dir
     })

@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'upload',
     'plot',
+    'landing',
 ]
 
 MIDDLEWARE = [

@@ -1,197 +1,29 @@
-{% extends 'plot/base.html' %}
+<!-- templates/plotting/my_custom_analysis.html -->
+{% extends 'base.html' %}
 
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Plotting: {{ text_file.name }}</h2>
-            <div>
-                <a href="{% url 'plot:plot_selection' %}" class="btn btn-secondary">Back to Selection</a>
-                <button class="btn btn-info" onclick="downloadData()">Download Data</button>
+        <h2>🎯 Meine spezielle Analyse: {{ text_file.name }}</h2>
+        
+        <div class="plot-container">
+            <div class="plot-header">
+                <h5>Meine Custom-Visualisierung</h5>
             </div>
+            <img src="data:image/png;base64,{{ my_plot }}" alt="Custom Plot" class="plot-image">
         </div>
-
-        <!-- File Info -->
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h5>File Information</h5>
-                        <p><strong>Name:</strong> {{ text_file.name }}</p>
-                        <p><strong>Path:</strong> <code>{{ text_file.file_path }}</code></p>
-                        <p><strong>Selected Lines:</strong> {{ total_lines }}</p>
-                    </div>
-                    <div class="col-md-4">
-                        <h6>Quick Actions</h6>
-                        <button class="btn btn-outline-primary btn-sm me-2" onclick="showLineLengthPlot()">Line Length</button>
-                        <button class="btn btn-outline-success btn-sm me-2" onclick="showWordCountPlot()">Word Count</button>
-                        <button class="btn btn-outline-info btn-sm" onclick="showCustomPlot()">Custom Plot</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Plot Controls -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5>Plot Options</h5>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <label class="form-label">Plot Type</label>
-                        <select class="form-control" id="plotType" onchange="updatePlot()">
-                            <option value="line">Line Chart</option>
-                            <option value="bar">Bar Chart</option>
-                            <option value="histogram">Histogram</option>
-                            <option value="scatter">Scatter Plot</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Y-Axis Data</label>
-                        <select class="form-control" id="yAxisData" onchange="updatePlot()">
-                            <option value="length">Content Length</option>
-                            <option value="word_count">Word Count</option>
-                            <option value="line_number">Line Number</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">Color Scheme</label>
-                        <select class="form-control" id="colorScheme" onchange="updatePlot()">
-                            <option value="viridis">Viridis</option>
-                            <option value="plasma">Plasma</option>
-                            <option value="blues">Blues</option>
-                            <option value="reds">Reds</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label">&nbsp;</label>
-                        <button class="btn btn-primary form-control" onclick="updatePlot()">Update Plot</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Plot Container -->
-        <div class="card">
-            <div class="card-header">
-                <h5 id="plotTitle">Data Visualization</h5>
-            </div>
-            <div class="card-body">
-                <div id="plotContainer" style="height: 500px;"></div>
-            </div>
-        </div>
-
-        <!-- Data Table (collapsed by default) -->
+        
+        <!-- Ihre zusätzlichen Informationen -->
         <div class="card mt-4">
-            <div class="card-header">
-                <h5>
-                    <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dataTable">
-                        Raw Data ({{ total_lines }} lines)
-                    </button>
-                </h5>
-            </div>
-            <div class="collapse" id="dataTable">
-                <div class="card-body">
-                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr>
-                                    <th>Line #</th>
-                                    <th>Content</th>
-                                    <th>Length</th>
-                                    <th>Words</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for content in selected_contents %}
-                                <tr>
-                                    <td>{{ content.line_number }}</td>
-                                    <td>{{ content.content|truncatechars:50 }}</td>
-                                    <td>{{ content.content|length }}</td>
-                                    <td>{{ content.content|wordcount }}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="card-body">
+                <h5>Analyse-Ergebnisse:</h5>
+                <ul>
+                    <li>Erkannte Muster: {{ pattern_count }}</li>
+                    <li>Anomalien: {{ anomaly_count }}</li>
+                    <li>Durchschnittswert: {{ average_value }}</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-// Plot data from Django
-const plotData = {{ plot_data|safe }};
-
-// Initialize the plot
-document.addEventListener('DOMContentLoaded', function() {
-    updatePlot();
-});
-
-function updatePlot() {
-    const plotType = document.getElementById('plotType').value;
-    const yAxisData = document.getElementById('yAxisData').value;
-    const colorScheme = document.getElementById('colorScheme').value;
-    
-    let xData = plotData.map(item => item.line_number);
-    let yData = plotData.map(item => item[yAxisData]);
-    
-    let trace = {
-        x: xData,
-        y: yData,
-        type: plotType === 'line' ? 'scatter' : plotType,
-        mode: plotType === 'line' ? 'lines+markers' : undefined,
-        marker: {
-            color: yData,
-            colorscale: colorScheme
-        },
-        name: yAxisData.replace('_', ' ').toUpperCase()
-    };
-    
-    let layout = {
-        title: `${yAxisData.replace('_', ' ').toUpperCase()} Analysis`,
-        xaxis: { title: 'Line Number' },
-        yaxis: { title: yAxisData.replace('_', ' ').toUpperCase() },
-        showlegend: false
-    };
-    
-    Plotly.newPlot('plotContainer', [trace], layout, {responsive: true});
-    document.getElementById('plotTitle').innerText = `${yAxisData.replace('_', ' ').toUpperCase()} Visualization`;
-}
-
-function showLineLengthPlot() {
-    document.getElementById('yAxisData').value = 'length';
-    document.getElementById('plotType').value = 'bar';
-    updatePlot();
-}
-
-function showWordCountPlot() {
-    document.getElementById('yAxisData').value = 'word_count';
-    document.getElementById('plotType').value = 'line';
-    updatePlot();
-}
-
-function showCustomPlot() {
-    // This is where you can call your custom plotting function
-    // Example: customPlottingFunction(plotData);
-    
-    alert('Call your custom plotting function here!\n\nData is available in the plotData variable.');
-    console.log('Plot data for custom function:', plotData);
-}
-
-function downloadData() {
-    const dataStr = JSON.stringify(plotData, null, 2);
-    const dataBlob = new Blob([dataStr], {type: 'application/json'});
-    const url = URL.createObjectURL(dataBlob);
-    
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = '{{ text_file.name }}_plot_data.json';
-    link.click();
-    
-    URL.revokeObjectURL(url);
-}
-</script>
 {% endblock %}
