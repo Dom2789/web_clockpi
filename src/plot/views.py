@@ -14,6 +14,7 @@ import base64
 import json
 from collections import Counter
 import seaborn as sns
+from .plot_roomtemp import plot_roomtemp
 
 # Set style for better looking plots
 plt.style.use('seaborn-v0_8')
@@ -228,10 +229,11 @@ def generate_position_analysis_plot(selected_contents):
     plt.tight_layout()
     return plot_to_base64()
 
-def plot_to_base64():
+def plot_to_base64(buffer=None):
     """Convert current matplotlib plot to base64 string"""
-    buffer = io.BytesIO()
-    plt.savefig(buffer, format='png', dpi=300, bbox_inches='tight', facecolor='white')
+    if buffer is None:
+        buffer = io.BytesIO()
+        plt.savefig(buffer, format='png', dpi=300, bbox_inches='tight', facecolor='white')
     buffer.seek(0)
     image_base64 = base64.b64encode(buffer.getvalue()).decode()
     buffer.close()
@@ -269,32 +271,7 @@ def custom_plot_view(request, file_id):
     return render(request, 'plot/custom_plot.html', context)
 
 def your_custom_plot_function(data):
-    """
-    Placeholder for your custom plotting function
-    Replace this with your actual plotting logic
-    
-    Args:
-        data: List of dictionaries with line data
-    
-    Returns:
-        base64 encoded image string
-    """
-    plt.figure(figsize=(10, 6))
-    
-    # Example custom plot - replace with your logic
-    line_numbers = [item['line_number'] for item in data]
-    lengths = [item['length'] for item in data]
-    
-    plt.plot(line_numbers, lengths, 'o-', alpha=0.7)
-    plt.xlabel('Line Number')
-    plt.ylabel('Content Length')
-    plt.title('Custom Analysis Plot')
-    plt.grid(True, alpha=0.3)
-    
-    # Add your custom analysis here
-    # For example: trend analysis, pattern recognition, etc.
-    
-    return plot_to_base64()
+       return plot_to_base64(plot_roomtemp(data))
 
 def get_plot_data_api(request, file_id):
     """API endpoint to get plot data as JSON"""
