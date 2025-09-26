@@ -1,29 +1,130 @@
-<!-- templates/plotting/my_custom_analysis.html -->
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <h2>🎯 Meine spezielle Analyse: {{ text_file.name }}</h2>
-        
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>📊 Matplotlib Plots: {{ text_file.name }}</h2>
+            <div>
+                <a href="{% url 'plot:plot_selection' %}" class="btn btn-secondary">← Back to Selection</a>
+                <button class="btn btn-info" onclick="downloadAllPlots()">💾 Download All</button>
+            </div>
+        </div>
+
+        <!-- File Info -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5>📄 File Information</h5>
+                        <p><strong>Name:</strong> {{ text_file.name }}</p>
+                        <p><strong>Path:</strong> <code>{{ text_file.file_path }}</code></p>
+                        <p><strong>Selected Lines:</strong> {{ total_lines }}</p>
+                        <p><strong>Generated:</strong> {{ text_file.processed_at|date:"M d, Y H:i" }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>🚀 Quick Actions</h6>
+                        <a href="{% url 'plot:custom_plot' text_file.id %}" class="btn btn-outline-primary btn-sm me-2">🎨 Custom Plot</a>
+                        <a href="{% url 'plot:plot_data_api' text_file.id %}" class="btn btn-outline-info btn-sm" target="_blank">📋 JSON Data</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Line Length Analysis -->
         <div class="plot-container">
             <div class="plot-header">
-                <h5>Meine Custom-Visualisierung</h5>
+                <h5 class="mb-0">📏 Line Length Analysis</h5>
+                <a href="{% url 'plot:download_plot' text_file.id 'line_length' %}" class="btn btn-outline-primary download-btn">💾 Download PNG</a>
             </div>
-            <img src="data:image/png;base64,{{ my_plot }}" alt="Custom Plot" class="plot-image">
+            <img src="data:image/png;base64,{{ plots.line_length }}" alt="Line Length Plot" class="plot-image">
         </div>
-        
-        <!-- Ihre zusätzlichen Informationen -->
+
+        <!-- Word Count Analysis -->
+        <div class="plot-container">
+            <div class="plot-header">
+                <h5 class="mb-0">📝 Word Count Analysis</h5>
+                <a href="{% url 'plot:download_plot' text_file.id 'word_count' %}" class="btn btn-outline-success download-btn">💾 Download PNG</a>
+            </div>
+            <img src="data:image/png;base64,{{ plots.word_count }}" alt="Word Count Plot" class="plot-image">
+        </div>
+
+        <!-- Distribution Analysis -->
+        <div class="plot-container">
+            <div class="plot-header">
+                <h5 class="mb-0">📊 Content Distribution Analysis</h5>
+                <a href="{% url 'plot:download_plot' text_file.id 'distribution' %}" class="btn btn-outline-info download-btn">💾 Download PNG</a>
+            </div>
+            <img src="data:image/png;base64,{{ plots.distribution }}" alt="Distribution Plot" class="plot-image">
+        </div>
+
+        <!-- Position Analysis -->
+        <div class="plot-container">
+            <div class="plot-header">
+                <h5 class="mb-0">📍 Position Analysis</h5>
+                <a href="{% url 'plot:download_plot' text_file.id 'position_analysis' %}" class="btn btn-outline-warning download-btn">💾 Download PNG</a>
+            </div>
+            <img src="data:image/png;base64,{{ plots.position_analysis }}" alt="Position Analysis Plot" class="plot-image">
+        </div>
+
+        <!-- Raw Data Table (collapsed by default) -->
         <div class="card mt-4">
-            <div class="card-body">
-                <h5>Analyse-Ergebnisse:</h5>
-                <ul>
-                    <li>Erkannte Muster: {{ pattern_count }}</li>
-                    <li>Anomalien: {{ anomaly_count }}</li>
-                    <li>Durchschnittswert: {{ average_value }}</li>
-                </ul>
+            <div class="card-header">
+                <h5>
+                    <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dataTable">
+                        📋 Raw Data ({{ total_lines }} lines)
+                    </button>
+                </h5>
+            </div>
+            <div class="collapse" id="dataTable">
+                <div class="card-body">
+                    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Line #</th>
+                                    <th>Content</th>
+                                    <th>Length</th>
+                                    <th>Words</th>
+                                    <th>Selected At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for content in selected_contents %}
+                                <tr>
+                                    <td>{{ content.line_number }}</td>
+                                    <td>{{ content.content|truncatechars:50 }}</td>
+                                    <td>{{ content.content|length }}</td>
+                                    <td>{{ content.content|wordcount }}</td>
+                                    <td>{{ content.selected_at|date:"M d, H:i" }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+// Plot data available for custom JavaScript functions if needed
+const plotData = {{ plot_data|safe }};
+
+function downloadAllPlots() {
+    const plotTypes = ['line_length', 'word_count', 'distribution', 'position_analysis'];
+    
+    plotTypes.forEach((plotType, index) => {
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = `{% url 'plot:download_plot' text_file.id 'PLOT_TYPE' %}`.replace('PLOT_TYPE', plotType);
+            link.download = `{{ text_file.name }}_${plotType}_plot.png`;
+            link.click();
+        }, index * 500); // Stagger downloads
+    });
+}
+
+console.log('Plot data available:', plotData);
+</script>
 {% endblock %}
