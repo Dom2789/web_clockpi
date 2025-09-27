@@ -17,7 +17,7 @@ def select_file(request):
             if selected_file_path and os.path.exists(selected_file_path):
                 # Get filename without path
                 filename = os.path.basename(selected_file_path)
-                
+                print(filename)
                 # Check if this file is already processed
                 text_file, created = TextFile.objects.get_or_create(
                     file_path=selected_file_path,

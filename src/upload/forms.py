@@ -16,7 +16,7 @@ class FileSelectionForm(forms.Form):
         try:
             if os.path.exists(text_files_dir):
                 for filename in os.listdir(text_files_dir):
-                    if filename.lower().endswith('.txt'):
+                    if filename.lower().endswith('.txt') and filename.lower().startswith("room_"):
                         file_path = os.path.join(text_files_dir, filename)
                         file_choices.append((file_path, filename))
             file_choices.sort(key=lambda x: x[1])  # Sort by filename

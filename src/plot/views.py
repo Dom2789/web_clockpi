@@ -27,7 +27,7 @@ def plot_selection(request):
         if form.is_valid():
             file_id = form.cleaned_data['selected_file']
             if file_id:
-                return redirect('plot:plot_data', file_id=file_id)
+                return redirect('plot:custom_plot', file_id=file_id)
             else:
                 messages.error(request, "Please select a file to plot.")
     else:

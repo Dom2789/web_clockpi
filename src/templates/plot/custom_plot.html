@@ -6,7 +6,6 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>🎨 Custom Plot: {{ text_file.name }}</h2>
             <div>
-                <a href="{% url 'plot:plot_data' text_file.id %}" class="btn btn-secondary">← Back to All Plots</a>
                 <a href="{% url 'plot:plot_selection' %}" class="btn btn-outline-secondary">Select Different File</a>
             </div>
         </div>
@@ -20,33 +19,12 @@
         <div class="plot-container">
             <div class="plot-header">
                 <h5 class="mb-0">🎨 Your Custom Plot</h5>
-                <button class="btn btn-outline-primary download-btn" onclick="downloadCustomPlot()">💾 Download PNG</button>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'plot:plot_data_api' text_file.id %}" class="btn btn-outline-info btn-sm" target="_blank">📋 JSON Data</a>
+                    <button class="btn btn-outline-primary btn-sm" onclick="downloadCustomPlot()">💾 Download PNG</button>
+                </div>
             </div>
             <img src="data:image/png;base64,{{ custom_plot }}" alt="Custom Plot" class="plot-image">
-        </div>
-
-        <!-- Instructions for customization -->
-        <div class="card mt-4">
-            <div class="card-header">
-                <h5>🔧 How to Customize This Plot</h5>
-            </div>
-            <div class="card-body">
-                <p>To customize this plot with your own function:</p>
-                <ol>
-                    <li>Edit the <code>your_custom_plot_function()</code> in <code>plotting/views.py</code></li>
-                    <li>Replace the example code with your matplotlib plotting logic</li>
-                    <li>The function receives data in this format:</li>
-                </ol>
-                <pre><code>[
-    {
-        "line_number": 1,
-        "content": "text content",
-        "length": 25,
-        "word_count": 5
-    },
-    ...
-]</code></pre>
-            </div>
         </div>
     </div>
 </div>

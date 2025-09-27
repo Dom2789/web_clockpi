@@ -2,8 +2,12 @@ import matplotlib
 matplotlib.use('Agg')  # Use non-GUI backend
 import matplotlib.pyplot as plt
 from io import BytesIO
+import seaborn as sns
 
 def plot_roomtemp(data):
+    # Set style for better looking plots
+    plt.style.use('seaborn-v0_8')
+    sns.set_palette("husl")
     # raw_data needs to be a list of strings
     raw_data = [item['content'] for item in data]
 
