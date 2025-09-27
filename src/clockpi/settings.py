@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'your-secret-key-here'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.178.100']
 
 # Application definition
 INSTALLED_APPS = [
@@ -67,7 +67,7 @@ DATABASES = {
 
 # Text files directory (IMPORTANT: Configure this path)
 # This should be the absolute path to your directory containing text files
-TEXT_FILES_DIRECTORY = '/Users/dom/temp'  # Change this to your actual path
+TEXT_FILES_DIRECTORY = '/home/pi/prot'  # Change this to your actual path
 # Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
 # Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
 # Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project
