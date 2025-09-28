@@ -219,3 +219,13 @@
 [Sun Sep 28 13:36:06.431147 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:49412] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
 [Sun Sep 28 13:36:06.432380 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:49412] Matplotlib created a temporary cache directory at /tmp/matplotlib-liw7tvce because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
 [Sun Sep 28 13:36:21.912846 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:56166] room_2025_9_14.txt
+[Sun Sep 28 15:40:36.541969 2025] [wsgi:error] [pid 573:tid 618] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:40:36.541886
+[Sun Sep 28 13:40:37.014896 2025] [wsgi:error] [pid 573:tid 618] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 13:40:37.015068 2025] [wsgi:error] [pid 573:tid 618] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:40:38.492749 2025] [wsgi:error] [pid 573:tid 618] [remote 192.168.178.117:46398] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
+[Sun Sep 28 13:40:38.494119 2025] [wsgi:error] [pid 573:tid 618] [remote 192.168.178.117:46398] Matplotlib created a temporary cache directory at /tmp/matplotlib-5uiosucw because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[Sun Sep 28 18:59:04.087235 2025] [wsgi:error] [pid 2418:tid 2428] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 18:59:04.087154
+[Sun Sep 28 18:59:04.280164 2025] [wsgi:error] [pid 2418:tid 2428] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 18:59:04.280288 2025] [wsgi:error] [pid 2418:tid 2428] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 18:59:04.803484 2025] [wsgi:error] [pid 2418:tid 2428] [remote 192.168.178.123:64674] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
+[Sun Sep 28 18:59:04.804688 2025] [wsgi:error] [pid 2418:tid 2428] [remote 192.168.178.123:64674] Matplotlib created a temporary cache directory at /tmp/matplotlib-5dhx2hur because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.

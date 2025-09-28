@@ -142,7 +142,7 @@ def refresh_files(request):
     try:
         if os.path.exists(text_files_dir):
             for filename in os.listdir(text_files_dir):
-                if filename.lower().endswith('.txt'):
+                if filename.lower().endswith('.txt') and filename.lower().startswith("room_"):
                     file_path = os.path.join(text_files_dir, filename)
                     file_stat = os.stat(file_path)
                     available_files.append({
