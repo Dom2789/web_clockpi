@@ -14,3 +14,45 @@ combine
 combine
 combine
 combine
+combine
+combine
+combine
+combine
+combine
+combine
+combine
+combine
+combine
+combine
+combine
+192.168.178.117 - - [28/Sep/2025:15:14:38 +0200] "GET / HTTP/1.1" 200 1149 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:09 +0200] "GET /select/ HTTP/1.1" 200 1709 "http://192.168.178.100/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:09 +0200] "GET /favicon.ico HTTP/1.1" 404 5194 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:29 +0200] "POST /select/ HTTP/1.1" 302 353 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:29 +0200] "GET /file/5/ HTTP/1.1" 200 5483 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:34 +0200] "POST /select-all/5/ HTTP/1.1" 200 398 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:15:47 +0200] "POST /clear-all/5/ HTTP/1.1" 500 123707 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:01 +0200] "GET /file/5/ HTTP/1.1" 200 5537 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:07 +0200] "GET / HTTP/1.1" 200 1148 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:09 +0200] "GET /select/ HTTP/1.1" 200 1709 "http://192.168.178.100/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:12 +0200] "POST /select/ HTTP/1.1" 302 352 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:12 +0200] "GET /file/5/ HTTP/1.1" 200 5482 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:15 +0200] "POST /clear-all/5/ HTTP/1.1" 200 376 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:19 +0200] "GET /file/5/ HTTP/1.1" 200 5639 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:30:21 +0200] "POST /select-all/5/ HTTP/1.1" 200 377 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:06 +0200] "GET /file/5/ HTTP/1.1" 200 5485 "http://192.168.178.100/select/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:08 +0200] "POST /file/5/ HTTP/1.1" 302 570 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:12 +0200] "GET /selected/5/ HTTP/1.1" 200 26057 "http://192.168.178.100/file/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:19 +0200] "GET /plot HTTP/1.1" 200 1865 "http://192.168.178.100/selected/5/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:28 +0200] "POST /plot HTTP/1.1" 302 355 "http://192.168.178.100/plot" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.117 - - [28/Sep/2025:15:31:28 +0200] "GET /custom/5/ HTTP/1.1" 200 831134 "http://192.168.178.100/plot" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0"
+192.168.178.123 - - [28/Sep/2025:15:31:52 +0200] "GET / HTTP/1.1" 200 1149 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+192.168.178.123 - - [28/Sep/2025:15:31:52 +0200] "GET /favicon.ico HTTP/1.1" 404 5194 "http://192.168.178.100/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+192.168.178.123 - - [28/Sep/2025:15:31:59 +0200] "GET /plot HTTP/1.1" 200 1864 "http://192.168.178.100/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+192.168.178.123 - - [28/Sep/2025:15:32:02 +0200] "POST /plot HTTP/1.1" 302 355 "http://192.168.178.100/plot" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+192.168.178.123 - - [28/Sep/2025:15:32:02 +0200] "GET /custom/3/ HTTP/1.1" 200 947365 "http://192.168.178.100/plot" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"
+192.168.178.122 - - [28/Sep/2025:15:33:26 +0200] "GET / HTTP/1.1" 200 1149 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"
+192.168.178.122 - - [28/Sep/2025:15:33:26 +0200] "GET /favicon.ico HTTP/1.1" 404 5194 "http://192.168.178.100/" "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"
+192.168.178.122 - - [28/Sep/2025:15:33:29 +0200] "GET /plot HTTP/1.1" 200 1859 "http://192.168.178.100/" "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"
+192.168.178.122 - - [28/Sep/2025:15:33:32 +0200] "POST /plot HTTP/1.1" 302 354 "http://192.168.178.100/plot" "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"
+192.168.178.122 - - [28/Sep/2025:15:33:32 +0200] "GET /custom/1/ HTTP/1.1" 200 688657 "http://192.168.178.100/plot" "Mozilla/5.0 (iPhone; CPU iPhone OS 18_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"

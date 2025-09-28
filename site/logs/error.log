@@ -65,3 +65,151 @@
 [Tue Sep 16 11:24:39.845304 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/http/request.py", line 150, in get_host
 [Tue Sep 16 11:24:39.845319 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140]     raise DisallowedHost(msg)
 [Tue Sep 16 11:24:39.845333 2025] [wsgi:error] [pid 2832:tid 2864] [remote 192.168.178.123:51140] django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.178.100'. You may need to add '192.168.178.100' to ALLOWED_HOSTS.
+[Sun Sep 28 10:08:51.006289 2025] [wsgi:error] [pid 2697:tid 2756] [remote 192.168.178.117:33476] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 10:08:51.006445 2025] [wsgi:error] [pid 2697:tid 2756] [remote 192.168.178.117:33476] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 10:08:51.006462 2025] [wsgi:error] [pid 2697:tid 2756] [remote 192.168.178.117:33476]   import numpy as np
+[Sun Sep 28 12:13:47.839326 2025] [wsgi:error] [pid 2698:tid 2701] [client 192.168.178.117:33476] Timeout when reading response headers from daemon process 'web_clockpi': /home/pi/web_clockpi/src/clockpi/wsgi.py
+[Sun Sep 28 12:13:55.984590 2025] [wsgi:error] [pid 2698:tid 2703] [client 192.168.178.117:33476] Truncated or oversized response headers received from daemon process 'web_clockpi': /home/pi/web_clockpi/src/clockpi/wsgi.py, referer: http://192.168.178.100/
+[Sun Sep 28 11:11:28.586200 2025] [wsgi:error] [pid 3578:tid 3592] [remote 192.168.178.117:40700] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 11:11:28.586322 2025] [wsgi:error] [pid 3578:tid 3592] [remote 192.168.178.117:40700] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 11:11:28.586340 2025] [wsgi:error] [pid 3578:tid 3592] [remote 192.168.178.117:40700]   import numpy as np
+[Sun Sep 28 11:16:12.360394 2025] [wsgi:error] [pid 3695:tid 3706] [remote 192.168.178.117:40904] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 11:16:12.360506 2025] [wsgi:error] [pid 3695:tid 3706] [remote 192.168.178.117:40904] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 11:16:12.360523 2025] [wsgi:error] [pid 3695:tid 3706] [remote 192.168.178.117:40904]   import numpy as np
+[Sun Sep 28 11:21:35.736824 2025] [wsgi:error] [pid 3874:tid 3892] [remote 192.168.178.117:49150] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 11:21:35.736936 2025] [wsgi:error] [pid 3874:tid 3892] [remote 192.168.178.117:49150] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 11:21:35.736953 2025] [wsgi:error] [pid 3874:tid 3892] [remote 192.168.178.117:49150]   import numpy as np
+[Sun Sep 28 13:26:34.686032 2025] [wsgi:error] [pid 3876:tid 3904] [client 192.168.178.117:49150] Timeout when reading response headers from daemon process 'web_clockpi': /home/pi/web_clockpi/src/clockpi/wsgi.py
+[Sun Sep 28 11:27:23.236877 2025] [wsgi:error] [pid 4023:tid 4040] [remote 192.168.178.117:44944] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 11:27:23.237047 2025] [wsgi:error] [pid 4023:tid 4040] [remote 192.168.178.117:44944] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 11:27:23.237066 2025] [wsgi:error] [pid 4023:tid 4040] [remote 192.168.178.117:44944]   import numpy as np
+[Sun Sep 28 13:28:48.930499 2025] [wsgi:error] [pid 4025:tid 4072] [client 192.168.178.117:44944] Truncated or oversized response headers received from daemon process 'web_clockpi': /home/pi/web_clockpi/src/clockpi/wsgi.py
+[Sun Sep 28 13:28:52.042293 2025] [wsgi:error] [pid 4114:tid 4119] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 13:28:52.042210
+[Sun Sep 28 13:28:52.042469 2025] [wsgi:error] [pid 4114:tid 4119] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:28:52.240247 2025] [wsgi:error] [pid 4114:tid 4119] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 13:28:52.497512 2025] [wsgi:error] [pid 4114:tid 4119] [remote 192.168.178.117:52232] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 13:28:52.497588 2025] [wsgi:error] [pid 4114:tid 4119] [remote 192.168.178.117:52232] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 13:28:52.497604 2025] [wsgi:error] [pid 4114:tid 4119] [remote 192.168.178.117:52232]   import numpy as np
+[Sun Sep 28 13:32:15.652633 2025] [wsgi:error] [pid 4160:tid 4162] [client 192.168.178.117:52232] Truncated or oversized response headers received from daemon process 'web_clockpi': /home/pi/web_clockpi/src/clockpi/wsgi.py
+[Sun Sep 28 13:32:16.834913 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750] mod_wsgi (pid=4272): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:32:16.835060 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750] mod_wsgi (pid=4272): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:32:16.847334 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750] Traceback (most recent call last):
+[Sun Sep 28 13:32:16.847453 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 12, in <module>
+[Sun Sep 28 13:32:16.847474 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750]     from django.core.wsgi import get_wsgi_application
+[Sun Sep 28 13:32:16.847524 2025] [wsgi:error] [pid 4272:tid 4274] [client 192.168.178.117:49750] ModuleNotFoundError: No module named 'django'
+[Sun Sep 28 13:32:22.072744 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654] mod_wsgi (pid=4272): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:32:22.072892 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654] mod_wsgi (pid=4272): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:32:22.073072 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654] Traceback (most recent call last):
+[Sun Sep 28 13:32:22.073144 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 12, in <module>
+[Sun Sep 28 13:32:22.073164 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654]     from django.core.wsgi import get_wsgi_application
+[Sun Sep 28 13:32:22.073213 2025] [wsgi:error] [pid 4272:tid 4276] [client 192.168.178.117:38654] ModuleNotFoundError: No module named 'django'
+[Sun Sep 28 13:38:28.100735 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284] mod_wsgi (pid=4272): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:38:28.100927 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284] mod_wsgi (pid=4272): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 13:38:28.101104 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284] Traceback (most recent call last):
+[Sun Sep 28 13:38:28.101184 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 12, in <module>
+[Sun Sep 28 13:38:28.101204 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284]     from django.core.wsgi import get_wsgi_application
+[Sun Sep 28 13:38:28.101253 2025] [wsgi:error] [pid 4272:tid 4278] [client 192.168.178.117:45284] ModuleNotFoundError: No module named 'django'
+[Sun Sep 28 14:41:53.674706 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612] mod_wsgi (pid=4810): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 14:41:53.674940 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612] mod_wsgi (pid=4810): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 14:41:53.687222 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612] Traceback (most recent call last):
+[Sun Sep 28 14:41:53.687346 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 12, in <module>
+[Sun Sep 28 14:41:53.687366 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612]     from django.core.wsgi import get_wsgi_application
+[Sun Sep 28 14:41:53.687418 2025] [wsgi:error] [pid 4810:tid 4814] [client 192.168.178.117:60612] ModuleNotFoundError: No module named 'django'
+[Sun Sep 28 14:48:41.905809 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374] mod_wsgi (pid=5219): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 14:48:41.905984 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374] mod_wsgi (pid=5219): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 14:48:41.918336 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374] Traceback (most recent call last):
+[Sun Sep 28 14:48:41.918456 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 12, in <module>
+[Sun Sep 28 14:48:41.918476 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374]     from django.core.wsgi import get_wsgi_application
+[Sun Sep 28 14:48:41.918528 2025] [wsgi:error] [pid 5219:tid 5267] [client 192.168.178.117:47374] ModuleNotFoundError: No module named 'django'
+[Sun Sep 28 15:01:23.995084 2025] [wsgi:error] [pid 5538:tid 5548] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:01:23.995002
+[Sun Sep 28 15:01:23.995244 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420] mod_wsgi (pid=5538): Failed to exec Python script file '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 15:01:23.995316 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420] mod_wsgi (pid=5538): Exception occurred processing WSGI script '/home/pi/web_clockpi/src/clockpi/wsgi.py'.
+[Sun Sep 28 15:01:23.995880 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420] Traceback (most recent call last):
+[Sun Sep 28 15:01:23.995968 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420]   File "/home/pi/web_clockpi/src/clockpi/wsgi.py", line 23, in <module>
+[Sun Sep 28 15:01:23.995989 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420]     syslog.syslog(f"[WSGI DEBUG] sys.executable = {sys.executable}")
+[Sun Sep 28 15:01:23.996043 2025] [wsgi:error] [pid 5538:tid 5548] [remote 192.168.178.117:60420] NameError: name 'syslog' is not defined
+[Sun Sep 28 15:02:45.732331 2025] [wsgi:error] [pid 5630:tid 5643] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:02:45.732249
+[Sun Sep 28 15:02:45.732564 2025] [wsgi:error] [pid 5630:tid 5643] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 15:02:45.929688 2025] [wsgi:error] [pid 5630:tid 5643] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 13:02:46.185694 2025] [wsgi:error] [pid 5630:tid 5643] [remote 192.168.178.117:42382] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 13:02:46.185777 2025] [wsgi:error] [pid 5630:tid 5643] [remote 192.168.178.117:42382] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 13:02:46.185794 2025] [wsgi:error] [pid 5630:tid 5643] [remote 192.168.178.117:42382]   import numpy as np
+[Sun Sep 28 15:06:12.756878 2025] [wsgi:error] [pid 5758:tid 5793] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:06:12.756797
+[Sun Sep 28 15:06:12.957740 2025] [wsgi:error] [pid 5758:tid 5793] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 15:06:12.957864 2025] [wsgi:error] [pid 5758:tid 5793] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:06:13.217584 2025] [wsgi:error] [pid 5758:tid 5793] [remote 192.168.178.117:42674] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 13:06:13.217667 2025] [wsgi:error] [pid 5758:tid 5793] [remote 192.168.178.117:42674] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 13:06:13.217684 2025] [wsgi:error] [pid 5758:tid 5793] [remote 192.168.178.117:42674]   import numpy as np
+[Sun Sep 28 15:11:30.696507 2025] [wsgi:error] [pid 5884:tid 5901] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:11:30.696426
+[Sun Sep 28 15:11:30.895036 2025] [wsgi:error] [pid 5884:tid 5901] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 15:11:30.895165 2025] [wsgi:error] [pid 5884:tid 5901] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:11:31.149417 2025] [wsgi:error] [pid 5884:tid 5901] [remote 192.168.178.117:36292] /home/pi/web_clockpi/.venv/lib/python3.9/site-packages/matplotlib/cbook.py:24: UserWarning: NumPy was imported from a Python sub-interpreter but NumPy does not properly support sub-interpreters. This will likely work for most users but might cause hard to track down issues or subtle bugs. A common user of the rare sub-interpreter feature is wsgi which also allows single-interpreter mode.
+[Sun Sep 28 13:11:31.149501 2025] [wsgi:error] [pid 5884:tid 5901] [remote 192.168.178.117:36292] Improvements in the case of bugs are welcome, but is not on the NumPy roadmap, and full support may require significant effort to achieve.
+[Sun Sep 28 13:11:31.149518 2025] [wsgi:error] [pid 5884:tid 5901] [remote 192.168.178.117:36292]   import numpy as np
+[Sun Sep 28 15:14:39.098120 2025] [wsgi:error] [pid 5983:tid 6008] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:14:39.098037
+[Sun Sep 28 15:14:39.295638 2025] [wsgi:error] [pid 5983:tid 6008] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 15:14:39.295763 2025] [wsgi:error] [pid 5983:tid 6008] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 15:14:39.906584 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:50222] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
+[Sun Sep 28 15:14:39.907850 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:50222] Matplotlib created a temporary cache directory at /tmp/matplotlib-ygp91zfv because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[Sun Sep 28 13:15:09.640285 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:39518] Not Found: /favicon.ico
+[Sun Sep 28 13:15:29.697127 2025] [wsgi:error] [pid 5983:tid 6019] [remote 192.168.178.117:33460] room_2025_9_28.txt
+[Sun Sep 28 13:15:47.971672 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] Internal Server Error: /clear-all/5/
+[Sun Sep 28 13:15:47.971773 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] Traceback (most recent call last):
+[Sun Sep 28 13:15:47.971790 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+[Sun Sep 28 13:15:47.971805 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return self.cursor.execute(sql, params)
+[Sun Sep 28 13:15:47.971820 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+[Sun Sep 28 13:15:47.971835 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return super().execute(query, params)
+[Sun Sep 28 13:15:47.971849 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] sqlite3.OperationalError: attempt to write a readonly database
+[Sun Sep 28 13:15:47.971864 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] 
+[Sun Sep 28 13:15:47.971877 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] The above exception was the direct cause of the following exception:
+[Sun Sep 28 13:15:47.971892 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] 
+[Sun Sep 28 13:15:47.971906 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] Traceback (most recent call last):
+[Sun Sep 28 13:15:47.971921 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 55, in inner
+[Sun Sep 28 13:15:47.971936 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     response = get_response(request)
+[Sun Sep 28 13:15:47.971950 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 197, in _get_response
+[Sun Sep 28 13:15:47.971966 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+[Sun Sep 28 13:15:47.971980 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/src/upload/views.py", line 201, in clear_all_selections
+[Sun Sep 28 13:15:47.971995 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     SelectedContent.objects.filter(text_file=text_file).delete()
+[Sun Sep 28 13:15:47.972009 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/models/query.py", line 1148, in delete
+[Sun Sep 28 13:15:47.972024 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     deleted, _rows_count = collector.delete()
+[Sun Sep 28 13:15:47.972038 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/models/deletion.py", line 472, in delete
+[Sun Sep 28 13:15:47.972053 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     count = qs._raw_delete(using=self.using)
+[Sun Sep 28 13:15:47.972099 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/models/query.py", line 1170, in _raw_delete
+[Sun Sep 28 13:15:47.972115 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     cursor = query.get_compiler(using).execute_sql(CURSOR)
+[Sun Sep 28 13:15:47.972129 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+[Sun Sep 28 13:15:47.972144 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     cursor.execute(sql, params)
+[Sun Sep 28 13:15:47.972158 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 102, in execute
+[Sun Sep 28 13:15:47.972173 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return super().execute(sql, params)
+[Sun Sep 28 13:15:47.972187 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 67, in execute
+[Sun Sep 28 13:15:47.972202 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return self._execute_with_wrappers(
+[Sun Sep 28 13:15:47.972216 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+[Sun Sep 28 13:15:47.972232 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return executor(sql, params, many, context)
+[Sun Sep 28 13:15:47.972246 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+[Sun Sep 28 13:15:47.972261 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return self.cursor.execute(sql, params)
+[Sun Sep 28 13:15:47.972276 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/utils.py", line 91, in __exit__
+[Sun Sep 28 13:15:47.972291 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     raise dj_exc_value.with_traceback(traceback) from exc_value
+[Sun Sep 28 13:15:47.972305 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 89, in _execute
+[Sun Sep 28 13:15:47.972320 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return self.cursor.execute(sql, params)
+[Sun Sep 28 13:15:47.972335 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]   File "/home/pi/web_clockpi/.venv/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+[Sun Sep 28 13:15:47.972349 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406]     return super().execute(query, params)
+[Sun Sep 28 13:15:47.972363 2025] [wsgi:error] [pid 5983:tid 6008] [remote 192.168.178.117:36406] django.db.utils.OperationalError: attempt to write a readonly database
+[Sun Sep 28 15:30:02.327406 2025] [wsgi:error] [pid 6259:tid 6318] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:30:02.327304
+[Sun Sep 28 15:30:02.526949 2025] [wsgi:error] [pid 6259:tid 6318] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 15:30:02.527084 2025] [wsgi:error] [pid 6259:tid 6318] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:30:03.045770 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.117:49036] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
+[Sun Sep 28 13:30:03.047046 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.117:49036] Matplotlib created a temporary cache directory at /tmp/matplotlib-v_b4d3r3 because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[Sun Sep 28 13:30:12.621595 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.117:49036] room_2025_9_28.txt
+[Sun Sep 28 13:31:28.733875 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.117:50002] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:106: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:31:28.733962 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.117:50002]   axis[0].set_xticklabels(new_x_axis)
+[Sun Sep 28 13:31:28.775339 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.117:50002] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:107: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:31:28.775423 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.117:50002]   axis[1].set_xticklabels(new_x_axis)
+[Sun Sep 28 13:31:52.830474 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.123:64639] Not Found: /favicon.ico
+[Sun Sep 28 13:32:03.294591 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.123:64641] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:106: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:32:03.294746 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.123:64641]   axis[0].set_xticklabels(new_x_axis)
+[Sun Sep 28 13:32:03.335420 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.123:64641] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:107: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:32:03.335504 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.123:64641]   axis[1].set_xticklabels(new_x_axis)
+[Sun Sep 28 13:33:26.611705 2025] [wsgi:error] [pid 6259:tid 6318] [remote 192.168.178.122:62014] Not Found: /favicon.ico
+[Sun Sep 28 13:33:33.466070 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:106: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:33:33.466157 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015]   axis[0].set_xticklabels(new_x_axis)
+[Sun Sep 28 13:33:33.485773 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:107: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+[Sun Sep 28 13:33:33.485864 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015]   axis[1].set_xticklabels(new_x_axis)
