@@ -213,3 +213,9 @@
 [Sun Sep 28 13:33:33.466157 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015]   axis[0].set_xticklabels(new_x_axis)
 [Sun Sep 28 13:33:33.485773 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015] /home/pi/web_clockpi/src/plot/plot_roomtemp.py:107: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
 [Sun Sep 28 13:33:33.485864 2025] [wsgi:error] [pid 6259:tid 6332] [remote 192.168.178.122:62015]   axis[1].set_xticklabels(new_x_axis)
+[Sun Sep 28 15:36:05.478681 2025] [wsgi:error] [pid 6448:tid 6458] [WSGI DEBUG] wsgi.py loaded at 2025-09-28 15:36:05.478599
+[Sun Sep 28 15:36:05.800838 2025] [wsgi:error] [pid 6448:tid 6458] [WSGI DEBUG] WSGI application successfully created.
+[Sun Sep 28 15:36:05.800964 2025] [wsgi:error] [pid 6448:tid 6458] [WSGI DEBUG] Creating WSGI application...
+[Sun Sep 28 13:36:06.431147 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:49412] mkdir -p failed for path /var/www/.config/matplotlib: [Errno 13] Permission denied: '/var/www/.config'
+[Sun Sep 28 13:36:06.432380 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:49412] Matplotlib created a temporary cache directory at /tmp/matplotlib-liw7tvce because there was an issue with the default path (/var/www/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[Sun Sep 28 13:36:21.912846 2025] [wsgi:error] [pid 6448:tid 6458] [remote 192.168.178.117:56166] room_2025_9_14.txt
