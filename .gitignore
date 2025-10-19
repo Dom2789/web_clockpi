@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# production
+/site/logs/
+/src/clockpi/settings.py
+/src/db.sqlite3
+	
