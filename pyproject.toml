@@ -7,5 +7,6 @@ requires-python = ">=3.9"
 dependencies = [
     "django>=4.2.24",
     "matplotlib>=3.9.4",
+    "requests>=2.32.5",
     "seaborn>=0.13.2",
 ]

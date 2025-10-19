@@ -14,3 +14,5 @@ wheels/
 /src/clockpi/settings.py
 /src/db.sqlite3
 	
+src/templates/landing/landing_page_with_icons.html
+site/public
