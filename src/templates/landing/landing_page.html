@@ -4,22 +4,30 @@
 
  <div class="container">
         <h1>Weather Forecast {{ city|default:"loco loco" }}</h1>
-        
+
         <div class="weather-grid">
+            <div class="weather-card sun">
+                <div class="card-header">
+                    <h2>Times of sunrise and sunset</h2>
+                <div class="sunrise">{{ sunrise|default:"early" }}</div>
+                <div class="sunset">{{ sunset|default:"late" }}</div>
+            </div>
+            </div>
+
             <!-- Current Weather -->
             <div class="weather-card current">
                 <div class="card-header">
                     <h2>Current Weather</h2>
-                    <div class="time">{{ current.time|default:"Now" }}</div>
-                <div class="temperature">{{ current.temp|default:"--" }}°C</div>
+                    <div class="time">{{ now.time|default:"Now" }}</div>
+                <div class="temperature">{{ now.temp|default:"--" }}°C</div>
                 <div class="weather-details">
                     <div class="detail-item">
                         <span class="detail-label">Wind Speed</span>
-                        <span class="detail-value">{{ current.wind_speed|default:"--" }} km/h</span>
+                        <span class="detail-value">{{ now.wind_speed|default:"--" }} km/h</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Wind Direction</span>
-                        <span class="detail-value">{{ current.wind_direction|default:"--" }} 
+                        <span class="detail-value">{{ now.wind_direction|default:"--" }} 
                     </div>
                 </div>
             </div>
@@ -28,17 +36,17 @@
             <div class="weather-card">
                 <div class="card-header">
                     <h2>In 3 Hours</h2>
-                    <div class="time">{{ forecast_3h.time }}</div>
+                    <div class="time">{{ 3h.time }}</div>
 
-                <div class="temperature">{{ forecast_3h.temp|default:"--" }}°C</div>
+                <div class="temperature">{{ 3h.temp|default:"--" }}°C</div>
                 <div class="weather-details">
                     <div class="detail-item">
                         <span class="detail-label">Wind Speed</span>
-                        <span class="detail-value">{{ forecast_3h.wind_speed|default:"--" }} km/h</span>
+                        <span class="detail-value">{{ 3h.wind_speed|default:"--" }} km/h</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Wind Direction</span>
-                        <span class="detail-value">{{ forecast_3h.wind_direction|default:"--" }} 
+                        <span class="detail-value">{{ 3h.wind_direction|default:"--" }} 
                     </div>
                 </div>
             </div>
@@ -47,17 +55,17 @@
             <div class="weather-card">
                 <div class="card-header">
                     <h2>In 6 Hours</h2>
-                    <div class="time">{{ forecast_6h.time }}</div>
+                    <div class="time">{{ 6h.time }}</div>
 
-                <div class="temperature">{{ forecast_6h.temp|default:"--" }}°C</div>
+                <div class="temperature">{{ 6h.temp|default:"--" }}°C</div>
                 <div class="weather-details">
                     <div class="detail-item">
                         <span class="detail-label">Wind Speed</span>
-                        <span class="detail-value">{{ forecast_6h.wind_speed|default:"--" }} km/h</span>
+                        <span class="detail-value">{{ 6h.wind_speed|default:"--" }} km/h</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Wind Direction</span>
-                        <span class="detail-value">{{ forecast_6h.wind_direction|default:"--" }} 
+                        <span class="detail-value">{{ 6h.wind_direction|default:"--" }} 
                     </div>
                 </div>
             </div>
@@ -66,17 +74,17 @@
             <div class="weather-card">
                 <div class="card-header">
                     <h2>In 9 Hours</h2>
-                    <div class="time">{{ forecast_9h.time }}</div>
+                    <div class="time">{{ 9h.time }}</div>
 
-                <div class="temperature">{{ forecast_9h.temp|default:"--" }}°C</div>
+                <div class="temperature">{{ 9h.temp|default:"--" }}°C</div>
                 <div class="weather-details">
                     <div class="detail-item">
                         <span class="detail-label">Wind Speed</span>
-                        <span class="detail-value">{{ forecast_9h.wind_speed|default:"--" }} km/h</span>
+                        <span class="detail-value">{{ 9h.wind_speed|default:"--" }} km/h</span>
                     </div>
                     <div class="detail-item">
                         <span class="detail-label">Wind Direction</span>
-                        <span class="detail-value">{{ forecast_9h.wind_direction|default:"--" }} 
+                        <span class="detail-value">{{ 9h.wind_direction|default:"--" }} 
                     </div>
                 </div>
             </div>

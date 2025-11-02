@@ -151,9 +151,12 @@ class Openweather(API_handler):
         else:
             return True
 
+    def get_keys_time_data(self) -> list[str]:
+        return self.keys
+
     def get_keys_parsed_data(self) -> list[str]:
         keys = self.parsed_data.keys()
-        return list(keys)
+        return keys
 
     def get_city(self) -> str:
         if self.parsed_data == {}:
