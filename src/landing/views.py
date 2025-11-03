@@ -69,7 +69,7 @@ def landing_page(request):
                 ckey = key[1:]
             else:
                 ckey = key
-            context[ckey] = openweather.get_temperature(key)
+            context[ckey]['temp'] = openweather.get_temperature(key)
  
     return render(request, 'landing/landing_page.html', context)
 

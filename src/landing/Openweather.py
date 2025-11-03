@@ -12,7 +12,7 @@ class Openweather(API_handler):
         super().__init__()
         self.parsed_data = {}
         self.url = url
-        self.keys = ["now", "+3h", "+6", "+9"]
+        self.keys = ["now", "+3h", "+6h", "+9h"]
 
 
     def parse_data(self):

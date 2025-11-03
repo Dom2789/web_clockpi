@@ -80,7 +80,7 @@ MEDIA_URL = 'site/public/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'site/public/media')
 
 # path to config file
-CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
+CONFIG_PATH = "/Users/dom_mini/temp/Webserver.txt"
 
 # File upload settings (still needed for other functionality)
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
