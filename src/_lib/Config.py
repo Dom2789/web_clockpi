@@ -1,10 +1,10 @@
-from django.conf import settings
+CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
 
 class Config():
     def __init__(self, path_config_file:str):
         with open(path_config_file) as file:
             self.config_data = file.readlines()
-        
+    
         for idx, line in enumerate(self.config_data):
             self.config_data[idx] = line.strip()
 
@@ -37,4 +37,6 @@ class Config():
     def get_path_log(self):
         return self.path_log
 
-config = Config(getattr(settings, 'CONFIG_PATH'))
+
+if __name__ == "__main__":
+    config = Config(CONFIG_PATH)

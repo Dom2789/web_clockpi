@@ -2,6 +2,13 @@
 
 import os
 from pathlib import Path
+from _lib.Config import Config
+
+# read settings from config-file
+
+# path to config file
+CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
+config = Config(CONFIG_PATH)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -65,12 +72,7 @@ DATABASES = {
     }
 }
 
-# Text files directory (IMPORTANT: Configure this path)
-# This should be the absolute path to your directory containing text files
-TEXT_FILES_DIRECTORY = '/home/dom/temp'  # Change this to your actual path
-# Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
-# Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
-# Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project
+
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'site/public/static/'
@@ -79,8 +81,7 @@ STATIC_ROOT = BASE_DIR / 'site/public/static'
 MEDIA_URL = 'site/public/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'site/public/media')
 
-# path to config file
-CONFIG_PATH = "/Users/dom_mini/temp/Webserver.txt"
+
 
 # File upload settings (still needed for other functionality)
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10 * 1024 * 1024  # 10MB
@@ -108,11 +109,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# settings located in external config-file
 
+# openweather-api specfic
+API_KEY = ""
+URL_FORCAST = ""
 
-from _lib.Config import config
-import _lib.logger
-
-# custom functions
-path = config.get_path_prot()
-_lib.logger.setup_logging(path)
+# Text files directory (IMPORTANT: Configure this path)
+# This should be the absolute path to your directory containing text files
+TEXT_FILES_DIRECTORY = '/home/dom/temp'  # Change this to your actual path
+# Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
+# Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
+# Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project
