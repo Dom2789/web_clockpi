@@ -3,12 +3,36 @@
 import os
 from pathlib import Path
 from _lib.Config import Config
+import _lib.logger as lg
+import logging
 
 # read settings from config-file
 
 # path to config file
-CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
+CONFIG_PATH = "/Users/dom_mini/temp/Webserver.txt"
 config = Config(CONFIG_PATH)
+
+# settings located in external config-file
+
+# openweather-api specfic
+API_KEY = config.get_item("api_key")
+URL_FORECAST = config.get_item("url_forecast").replace("{API key}", API_KEY)
+URL_WEATHER = config.get_item("url_weather").replace("{API key}", API_KEY)
+
+# Text files directory (IMPORTANT: Configure this path)
+# This should be the absolute path to your directory containing text files
+PROT_FILES = config.get_item("PWDprot")
+# Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
+# Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
+# Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project
+LOG_FILES = config.get_item("PWDlog")
+
+ALLOWED_HOSTS = [config.get_item("allowed_hosts")]
+
+# end from external config-file
+
+# setup logging
+lg.setup_logging(LOG_FILES)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,7 +43,7 @@ SECRET_KEY = 'your-secret-key-here'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -109,15 +133,3 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# settings located in external config-file
-
-# openweather-api specfic
-API_KEY = ""
-URL_FORCAST = ""
-
-# Text files directory (IMPORTANT: Configure this path)
-# This should be the absolute path to your directory containing text files
-TEXT_FILES_DIRECTORY = '/home/dom/temp'  # Change this to your actual path
-# Example: TEXT_FILES_DIRECTORY = '/home/user/documents/text_files'
-# Example: TEXT_FILES_DIRECTORY = 'C:\\Users\\user\\Documents\\text_files'  # Windows
-# Example: TEXT_FILES_DIRECTORY = BASE_DIR / 'server_text_files'  # Relative to project

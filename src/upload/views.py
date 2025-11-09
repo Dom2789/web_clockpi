@@ -136,7 +136,7 @@ def file_list(request):
 
 def refresh_files(request):
     """View to scan directory and show available files without processing"""
-    text_files_dir = getattr(settings, 'TEXT_FILES_DIRECTORY', 'text_files')
+    text_files_dir = getattr(settings, 'PROT_FILES', 'text_files')
     available_files = []
     
     try:

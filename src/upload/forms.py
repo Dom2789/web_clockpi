@@ -9,7 +9,7 @@ class FileSelectionForm(forms.Form):
         super().__init__(*args, **kwargs)
         
         # Get the directory path from settings
-        text_files_dir = getattr(settings, 'TEXT_FILES_DIRECTORY', 'text_files')
+        text_files_dir = getattr(settings, 'PROT_FILES', 'text_files')
         
         # Get list of .txt files from the directory
         file_choices = []
