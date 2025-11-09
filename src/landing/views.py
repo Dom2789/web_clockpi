@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from _lib.Config import config
+from django.conf import settings
 from datetime import datetime, timedelta
-import os
 from .Openweather import Openweather
 
 def landing_page(request):
@@ -9,10 +8,11 @@ def landing_page(request):
     View to display weather dashboard
     Pass weather data from your weather API to the template
     """
-    url = config.get_url_forecast()
+    url = getattr(settings, "URL_FORECAST")
     openweather = Openweather(url)
     openweather.parse_data()
-    openweather.save_parsed_data_to_json_file(config.get_path_prot())
+    path_prot = getattr(settings, 'PROT_FILES')
+    openweather.save_parsed_data_to_json_file(path_prot)
     
     # Calculate times for forecasts
     now = datetime.now()
