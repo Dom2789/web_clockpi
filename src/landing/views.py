@@ -70,6 +70,11 @@ def landing_page(request):
             else:
                 ckey = key
             context[ckey]['temp'] = openweather.get_temperature(key)
+            context[ckey]['feelslike'] = openweather.get_feels_like(key)
+            context[ckey]['description'] = openweather.get_weather_description(key)
+            context[ckey]['wind_direction'] = openweather.get_wind_direction(key)
+            context[ckey]['wind_speed'] = openweather.get_wind_speed(key)
+
  
     return render(request, 'landing/landing_page.html', context)
 

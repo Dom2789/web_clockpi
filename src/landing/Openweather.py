@@ -208,7 +208,7 @@ class Openweather(API_handler):
         else:
             return self.parsed_data[key]["wind"]["speed"]
         
-    def get_wind_direction(self, key:str, de_en:bool = True) -> str:
+    def get_wind_direction(self, key:str, de_en:bool = False) -> str:
         if self.parsed_data == {}:
             return "no data"
         else:
