@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('upload.urls')),
     path('', include('plot.urls')),
-    path('', include('landing.urls'))
+    path('', include('landing.urls')),
+    path('', include('ledcontrol.urls'))
 ]
 
 if settings.DEBUG:

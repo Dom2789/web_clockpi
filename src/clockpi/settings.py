@@ -9,7 +9,7 @@ import logging
 # read settings from config-file
 
 # path to config file
-CONFIG_PATH = "/home/pi/_config/Webserver.txt"
+CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
 config = Config(CONFIG_PATH)
 
 # settings located in external config-file
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'upload',
     'plot',
     'landing',
+    'ledcontrol'
 ]
 
 MIDDLEWARE = [
