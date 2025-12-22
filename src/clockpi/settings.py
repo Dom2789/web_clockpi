@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [config.get_item("allowed_hosts")]
 # end from external config-file
 
 # setup logging
-lg.setup_logging(LOG_FILES)
+lg.setup_logging(LOG_FILES, add_date_to_name= True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
