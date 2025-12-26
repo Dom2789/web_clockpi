@@ -134,3 +134,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# MQTT
+BROKER_IP = config.get_item("IPbroker")
+TOPIC_PUBLISH = config.get_item("TopicPub")
