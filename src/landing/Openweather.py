@@ -8,16 +8,17 @@ import json
 
 class Openweather(API_handler):
 
-    def __init__(self, url:str):
+    def __init__(self, url:str, logger=logging):
         super().__init__()
         self.parsed_data = {}
         self.url = url
         self.keys = ["now", "+3h", "+6h", "+9h"]
+        self._logger = logger
 
 
     def parse_data(self):
         # get data 
-        self.data = self.get_posts(self.url)
+        self.data = self.get_posts(self.url, self._logger)
 
         if self.data is not None:  
             # parsing data
@@ -77,12 +78,12 @@ class Openweather(API_handler):
     def save_parsed_data_to_json_file(self, path:str):
         if self.parsed_data == {}:
             
-            logging.info("Tried to save parsed data to file, when no data is available.")
+            self._logger.info("Tried to save parsed data to file, when no data is available.")
         else:
             file = path + "parsed_data.json" 
             with open(file, "w") as f:
                 json.dump(self.parsed_data, f)
-            logging.info(f"Saved parsed data to {file}")
+            self._logger.info(f"Saved parsed data to {file}")
         
 
 

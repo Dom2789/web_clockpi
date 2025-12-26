@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from datetime import datetime, timedelta
 from .Openweather import Openweather
+from . import land_logger
 
 def landing_page(request):
     """
@@ -9,7 +10,7 @@ def landing_page(request):
     Pass weather data from your weather API to the template
     """
     url = getattr(settings, "URL_FORECAST")
-    openweather = Openweather(url)
+    openweather = Openweather(url, land_logger)
     openweather.parse_data()
     path_prot = getattr(settings, 'PROT_FILES')
     openweather.save_parsed_data_to_json_file(path_prot)
