@@ -1,4 +1,4 @@
-CONFIG_PATH = "/Users/dom_mini/temp/new_config.txt"
+CONFIG_PATH = "/home/pi/_config/Webserver.txt"
 
 class Config():
     def __init__(self, path_config_file:str):
