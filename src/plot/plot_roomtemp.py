@@ -3,6 +3,7 @@ matplotlib.use('Agg')  # Use non-GUI backend
 import matplotlib.pyplot as plt
 from io import BytesIO
 import seaborn as sns
+from . import plot_logger
 
 def plot_roomtemp(data):
     # Set style for better looking plots
@@ -28,6 +29,7 @@ def plot_roomtemp(data):
         line = line.split()
         for idx, listing in enumerate(data):
             if idx == 0:
+                plot_logger.info(line[idx])
                 hours, min, sec = line[idx].split(":")
                 data[idx].append((int(hours),int(min),int(sec)))
             else:
