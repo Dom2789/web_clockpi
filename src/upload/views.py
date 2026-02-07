@@ -181,7 +181,7 @@ def select_all_lines(request, file_id):
                 for i, line in enumerate(file_lines)
             ]
 
-            SelectedContent.objects.bulk_create(objects, batch_size=1000)
+            SelectedContent.objects.bulk_create(objects, batch_size=len(file_lines))
             
             return JsonResponse({
                 'success': True, 

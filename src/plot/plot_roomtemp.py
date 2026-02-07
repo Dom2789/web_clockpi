@@ -105,7 +105,7 @@ def plot_roomtemp(data):
 
     axis[0].set_xticklabels(new_x_axis)
     axis[1].set_xticklabels(new_x_axis)
-    axis[2].set_xticks(labels, new_x_axis)
+    axis[2].set_xticklabels(new_x_axis)
     plt.xlabel(f"Time of day")
 
     buffer = BytesIO()
