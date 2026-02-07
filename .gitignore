@@ -15,3 +15,6 @@ wheels/
 	
 src/templates/landing/landing_page_with_icons.html
 site/public
+
+# pycharm
+.idea

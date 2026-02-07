@@ -169,17 +169,19 @@ def select_all_lines(request, file_id):
             with open(text_file.file_path, 'r', encoding='utf-8') as f:
                 file_lines = f.readlines()
             file_lines = [line.rstrip('\n\r') for line in file_lines]
-            
-            # Clear existing selections
+
             SelectedContent.objects.filter(text_file=text_file).delete()
-            
-            # Select all lines
-            for i, line in enumerate(file_lines):
-                SelectedContent.objects.create(
+
+            objects = [
+                SelectedContent(
                     text_file=text_file,
                     content=line,
                     line_number=i + 1
                 )
+                for i, line in enumerate(file_lines)
+            ]
+
+            SelectedContent.objects.bulk_create(objects, batch_size=1000)
             
             return JsonResponse({
                 'success': True, 
