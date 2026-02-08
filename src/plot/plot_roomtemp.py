@@ -26,14 +26,24 @@ def plot_roomtemp(data):
     for line in raw_data:
         for char in chars_to_replace:
             line = line.replace(char, "")
+        # split into list with 4 strings (time, temperature, pressure, humidity)
         line = line.split()
         for idx, listing in enumerate(data):
+            # index 0 correspondes to time 
             if idx == 0:
-                plot_logger.info(line[idx])
-                hours, min, sec = line[idx].split(":")
-                data[idx].append((int(hours),int(min),int(sec)))
+                try:
+                    hours, min, sec = line[idx].split(":")
+                    data[idx].append((int(hours),int(min),int(sec)))
+                except Exception as e:
+                    plot_logger.warning(f"timestamp not correct, line {idx+1}: {e}")
+                    # one dataset less
+                    no_datasets -= 1
+                    break                   
             else:
-                data[idx].append(float(line[idx]))
+                try:
+                    data[idx].append(float(line[idx]))
+                except Exception as e:
+                    plot_logger.warning(f"not a correct float value in line {idx+1}")
 
     first_timestamp = data[0][0]
     last_timestamp = data[0][-1]

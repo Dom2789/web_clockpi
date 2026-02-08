@@ -15,6 +15,9 @@ import os
 import sys
 import datetime
 
+# fix matplotlib write access
+os.environ['MPLCONFIGDIR'] = '/tmp/matplotlib-cache'
+
 # Debug output: print to Apache error log
 sys.stderr.write(f"[WSGI DEBUG] wsgi.py loaded at {datetime.datetime.now()}\n")
 
