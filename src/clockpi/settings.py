@@ -10,6 +10,7 @@ import logging
 
 # path to config file
 CONFIG_PATH = "/home/pi/_config/Webserver.txt"
+#CONFIG_PATH = "/Users/dom/temp/Webserver.txt"
 config = Config(CONFIG_PATH)
 
 # settings located in external config-file
@@ -102,6 +103,7 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'site/public/static/'
 STATIC_ROOT = BASE_DIR / 'site/public/static'
+STATICFILES_DIRS = [BASE_DIR / 'templates']
 
 MEDIA_URL = 'site/public/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'site/public/media')
