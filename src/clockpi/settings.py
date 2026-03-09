@@ -102,6 +102,7 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'site/public/static/'
 STATIC_ROOT = BASE_DIR / 'site/public/static'
+STATICFILES_DIRS = [BASE_DIR / 'templates']
 
 MEDIA_URL = 'site/public/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'site/public/media')
