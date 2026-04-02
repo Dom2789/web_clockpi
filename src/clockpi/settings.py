@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from _lib.Config import Config
 import _lib.logger as lg
-import logging
+
 
 # read settings from config-file
 
